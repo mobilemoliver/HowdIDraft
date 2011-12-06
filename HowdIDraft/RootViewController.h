@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YahooCommunicationController.h"
 
-@interface RootViewController : UITableViewController {
-
+@interface RootViewController : UIViewController <YahooCommDelegate> {
+    YahooCommunicationController *yahooController;
+    UIWebView *authenticationWebView;
+    NSMutableArray *leagueIDs;
 }
+
+@property (nonatomic, readonly) NSArray *leagueIDs;
+
+- (void) showTeams;
 
 
 @end

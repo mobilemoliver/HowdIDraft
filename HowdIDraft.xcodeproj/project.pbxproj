@@ -16,6 +16,45 @@
 		5D79728B145388660059C957 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D797289145388660059C957 /* MainWindow.xib */; };
 		5D79728E145388660059C957 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79728D145388660059C957 /* RootViewController.m */; };
 		5D797291145388660059C957 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D79728F145388660059C957 /* RootViewController.xib */; };
+		5D79732B146776530059C957 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7972F4146776530059C957 /* NSObject+SBJSON.m */; };
+		5D79732C146776530059C957 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7972F6146776530059C957 /* NSString+SBJSON.m */; };
+		5D79732D146776530059C957 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7972F8146776530059C957 /* SBJSON.m */; };
+		5D79732E146776530059C957 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 5D7972FB146776530059C957 /* Base64Transcoder.c */; };
+		5D79732F146776530059C957 /* NSData+OAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7972FE146776530059C957 /* NSData+OAuthResponse.m */; };
+		5D797330146776530059C957 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797300146776530059C957 /* NSDictionary+QueryString.m */; };
+		5D797331146776530059C957 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797302146776530059C957 /* NSString+URLEncoding.m */; };
+		5D797332146776530059C957 /* YOAuthConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797305146776530059C957 /* YOAuthConsumer.m */; };
+		5D797333146776530059C957 /* YOAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797307146776530059C957 /* YOAuthRequest.m */; };
+		5D797334146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79730A146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.m */; };
+		5D797335146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79730C146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.m */; };
+		5D797336146776530059C957 /* YOAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79730E146776530059C957 /* YOAuthToken.m */; };
+		5D797337146776530059C957 /* YOAuthUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797310146776530059C957 /* YOAuthUtil.m */; };
+		5D797338146776530059C957 /* YOSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797313146776530059C957 /* YOSAccessToken.m */; };
+		5D797339146776530059C957 /* YOSAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797315146776530059C957 /* YOSAuthRequest.m */; };
+		5D79733A146776530059C957 /* YOSBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797317146776530059C957 /* YOSBaseRequest.m */; };
+		5D79733B146776530059C957 /* YOSOpenSocialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797319146776530059C957 /* YOSOpenSocialRequest.m */; };
+		5D79733C146776530059C957 /* YOSRequestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79731B146776530059C957 /* YOSRequestClient.m */; };
+		5D79733D146776530059C957 /* YOSRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79731D146776530059C957 /* YOSRequestToken.m */; };
+		5D79733E146776530059C957 /* YOSResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79731F146776530059C957 /* YOSResponseData.m */; };
+		5D79733F146776530059C957 /* YOSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797321146776530059C957 /* YOSSession.m */; };
+		5D797340146776530059C957 /* YOSTokenStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797324146776530059C957 /* YOSTokenStore.m */; };
+		5D797341146776530059C957 /* YOSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797326146776530059C957 /* YOSUser.m */; };
+		5D797342146776530059C957 /* YOSUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797328146776530059C957 /* YOSUserRequest.m */; };
+		5D797343146776530059C957 /* YQLQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79732A146776530059C957 /* YQLQueryRequest.m */; };
+		5D797365146ECAE10059C957 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D797364146ECAE10059C957 /* libxml2.dylib */; };
+		5D79737C147B31090059C957 /* YahooCommunicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79737B147B31090059C957 /* YahooCommunicationController.m */; };
+		5D79737F147B37410059C957 /* YahooFFL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D79737D147B37410059C957 /* YahooFFL.xcdatamodeld */; };
+		5D797381147B39300059C957 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D797380147B39300059C957 /* CoreData.framework */; };
+		5D797385147B43D50059C957 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797384147B43D50059C957 /* CoreDataManager.m */; };
+		5D797389147DC9F40059C957 /* TeamInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D797387147DC9F30059C957 /* TeamInfoTableViewController.m */; };
+		5D79738A147DC9F40059C957 /* TeamInfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D797388147DC9F40059C957 /* TeamInfoTableViewController.xib */; };
+		5D79738D147DE7D00059C957 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79738C147DE7CF0059C957 /* TeamInfoCell.m */; };
+		5D79738F147DE7FE0059C957 /* TeamInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D79738E147DE7FE0059C957 /* TeamInfoCell.xib */; };
+		5D7973B9148C68B70059C957 /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973B8148C68B60059C957 /* League.m */; };
+		5D7973BC148C68B80059C957 /* DraftEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973BB148C68B70059C957 /* DraftEntry.m */; };
+		5D7973BF148C68B90059C957 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973BE148C68B80059C957 /* Team.m */; };
+		5D7973C2148C68B90059C957 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973C1148C68B90059C957 /* Manager.m */; };
+		5D7973C5148C68BE0059C957 /* YahooUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973C4148C68BA0059C957 /* YahooUser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +62,94 @@
 		5D797277145388660059C957 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D797279145388660059C957 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D79727B145388660059C957 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5D79727F145388660059C957 /* HowdIDraft-Info.plist */ = {isa = PBXFileReference; path = "HowdIDraft-Info.plist"; sourceTree = "<group>"; };
+		5D79727F145388660059C957 /* HowdIDraft-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HowdIDraft-Info.plist"; sourceTree = "<group>"; };
 		5D797281145388660059C957 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5D797283145388660059C957 /* HowdIDraft-Prefix.pch */ = {isa = PBXFileReference; path = "HowdIDraft-Prefix.pch"; sourceTree = "<group>"; };
+		5D797283145388660059C957 /* HowdIDraft-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HowdIDraft-Prefix.pch"; sourceTree = "<group>"; };
 		5D797284145388660059C957 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5D797286145388660059C957 /* HowdIDraftAppDelegate.h */ = {isa = PBXFileReference; path = HowdIDraftAppDelegate.h; sourceTree = "<group>"; };
+		5D797286145388660059C957 /* HowdIDraftAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HowdIDraftAppDelegate.h; sourceTree = "<group>"; };
 		5D797287145388660059C957 /* HowdIDraftAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HowdIDraftAppDelegate.m; sourceTree = "<group>"; };
 		5D79728A145388660059C957 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		5D79728C145388660059C957 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		5D79728C145388660059C957 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5D79728D145388660059C957 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5D797290145388660059C957 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		5D7972F2146776530059C957 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		5D7972F3146776530059C957 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		5D7972F4146776530059C957 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		5D7972F5146776530059C957 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		5D7972F6146776530059C957 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		5D7972F7146776530059C957 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		5D7972F8146776530059C957 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		5D7972FB146776530059C957 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		5D7972FC146776530059C957 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		5D7972FD146776530059C957 /* NSData+OAuthResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+OAuthResponse.h"; sourceTree = "<group>"; };
+		5D7972FE146776530059C957 /* NSData+OAuthResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+OAuthResponse.m"; sourceTree = "<group>"; };
+		5D7972FF146776530059C957 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		5D797300146776530059C957 /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		5D797301146776530059C957 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		5D797302146776530059C957 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		5D797303146776530059C957 /* YOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuth.h; sourceTree = "<group>"; };
+		5D797304146776530059C957 /* YOAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthConsumer.h; sourceTree = "<group>"; };
+		5D797305146776530059C957 /* YOAuthConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthConsumer.m; sourceTree = "<group>"; };
+		5D797306146776530059C957 /* YOAuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthRequest.h; sourceTree = "<group>"; };
+		5D797307146776530059C957 /* YOAuthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthRequest.m; sourceTree = "<group>"; };
+		5D797308146776530059C957 /* YOAuthSignatureMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthSignatureMethod.h; sourceTree = "<group>"; };
+		5D797309146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YOAuthSignatureMethod_HMAC-SHA1.h"; sourceTree = "<group>"; };
+		5D79730A146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YOAuthSignatureMethod_HMAC-SHA1.m"; sourceTree = "<group>"; };
+		5D79730B146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthSignatureMethod_PLAINTEXT.h; sourceTree = "<group>"; };
+		5D79730C146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthSignatureMethod_PLAINTEXT.m; sourceTree = "<group>"; };
+		5D79730D146776530059C957 /* YOAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthToken.h; sourceTree = "<group>"; };
+		5D79730E146776530059C957 /* YOAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthToken.m; sourceTree = "<group>"; };
+		5D79730F146776530059C957 /* YOAuthUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthUtil.h; sourceTree = "<group>"; };
+		5D797310146776530059C957 /* YOAuthUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthUtil.m; sourceTree = "<group>"; };
+		5D797312146776530059C957 /* YOSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSAccessToken.h; sourceTree = "<group>"; };
+		5D797313146776530059C957 /* YOSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSAccessToken.m; sourceTree = "<group>"; };
+		5D797314146776530059C957 /* YOSAuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSAuthRequest.h; sourceTree = "<group>"; };
+		5D797315146776530059C957 /* YOSAuthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSAuthRequest.m; sourceTree = "<group>"; };
+		5D797316146776530059C957 /* YOSBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSBaseRequest.h; sourceTree = "<group>"; };
+		5D797317146776530059C957 /* YOSBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSBaseRequest.m; sourceTree = "<group>"; };
+		5D797318146776530059C957 /* YOSOpenSocialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSOpenSocialRequest.h; sourceTree = "<group>"; };
+		5D797319146776530059C957 /* YOSOpenSocialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSOpenSocialRequest.m; sourceTree = "<group>"; };
+		5D79731A146776530059C957 /* YOSRequestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSRequestClient.h; sourceTree = "<group>"; };
+		5D79731B146776530059C957 /* YOSRequestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSRequestClient.m; sourceTree = "<group>"; };
+		5D79731C146776530059C957 /* YOSRequestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSRequestToken.h; sourceTree = "<group>"; };
+		5D79731D146776530059C957 /* YOSRequestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSRequestToken.m; sourceTree = "<group>"; };
+		5D79731E146776530059C957 /* YOSResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSResponseData.h; sourceTree = "<group>"; };
+		5D79731F146776530059C957 /* YOSResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSResponseData.m; sourceTree = "<group>"; };
+		5D797320146776530059C957 /* YOSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSSession.h; sourceTree = "<group>"; };
+		5D797321146776530059C957 /* YOSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSSession.m; sourceTree = "<group>"; };
+		5D797322146776530059C957 /* YOSSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSSocial.h; sourceTree = "<group>"; };
+		5D797323146776530059C957 /* YOSTokenStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSTokenStore.h; sourceTree = "<group>"; };
+		5D797324146776530059C957 /* YOSTokenStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSTokenStore.m; sourceTree = "<group>"; };
+		5D797325146776530059C957 /* YOSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSUser.h; sourceTree = "<group>"; };
+		5D797326146776530059C957 /* YOSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSUser.m; sourceTree = "<group>"; };
+		5D797327146776530059C957 /* YOSUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSUserRequest.h; sourceTree = "<group>"; };
+		5D797328146776530059C957 /* YOSUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSUserRequest.m; sourceTree = "<group>"; };
+		5D797329146776530059C957 /* YQLQueryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLQueryRequest.h; sourceTree = "<group>"; };
+		5D79732A146776530059C957 /* YQLQueryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLQueryRequest.m; sourceTree = "<group>"; };
+		5D797344146779CF0059C957 /* ThirdPartyKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPartyKeys.h; sourceTree = "<group>"; };
+		5D797364146ECAE10059C957 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		5D79737A147B31090059C957 /* YahooCommunicationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YahooCommunicationController.h; sourceTree = "<group>"; };
+		5D79737B147B31090059C957 /* YahooCommunicationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooCommunicationController.m; sourceTree = "<group>"; };
+		5D79737E147B37410059C957 /* LeagueModelCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeagueModelCD.xcdatamodel; sourceTree = "<group>"; };
+		5D797380147B39300059C957 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5D797383147B43D50059C957 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		5D797384147B43D50059C957 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		5D797386147DC9F30059C957 /* TeamInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoTableViewController.h; sourceTree = "<group>"; };
+		5D797387147DC9F30059C957 /* TeamInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoTableViewController.m; sourceTree = "<group>"; };
+		5D797388147DC9F40059C957 /* TeamInfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamInfoTableViewController.xib; sourceTree = "<group>"; };
+		5D79738B147DE7CF0059C957 /* TeamInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoCell.h; sourceTree = "<group>"; };
+		5D79738C147DE7CF0059C957 /* TeamInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoCell.m; sourceTree = "<group>"; };
+		5D79738E147DE7FE0059C957 /* TeamInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamInfoCell.xib; sourceTree = "<group>"; };
+		5D7973B7148C68B50059C957 /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
+		5D7973B8148C68B60059C957 /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
+		5D7973BA148C68B70059C957 /* DraftEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraftEntry.h; sourceTree = "<group>"; };
+		5D7973BB148C68B70059C957 /* DraftEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraftEntry.m; sourceTree = "<group>"; };
+		5D7973BD148C68B80059C957 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		5D7973BE148C68B80059C957 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
+		5D7973C0148C68B90059C957 /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		5D7973C1148C68B90059C957 /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		5D7973C3148C68B90059C957 /* YahooUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YahooUser.h; sourceTree = "<group>"; };
+		5D7973C4148C68BA0059C957 /* YahooUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooUser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D797381147B39300059C957 /* CoreData.framework in Frameworks */,
+				5D797365146ECAE10059C957 /* libxml2.dylib in Frameworks */,
 				5D797278145388660059C957 /* UIKit.framework in Frameworks */,
 				5D79727A145388660059C957 /* Foundation.framework in Frameworks */,
 				5D79727C145388660059C957 /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +171,9 @@
 		5D797268145388650059C957 = {
 			isa = PBXGroup;
 			children = (
+				5D7972F1146776530059C957 /* json-framework */,
+				5D7972F9146776530059C957 /* YOAuth */,
+				5D797311146776530059C957 /* YOSSocial */,
 				5D79727D145388660059C957 /* HowdIDraft */,
 				5D797276145388660059C957 /* Frameworks */,
 				5D797274145388650059C957 /* Products */,
@@ -69,6 +191,8 @@
 		5D797276145388660059C957 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D797364146ECAE10059C957 /* libxml2.dylib */,
+				5D797380147B39300059C957 /* CoreData.framework */,
 				5D797277145388660059C957 /* UIKit.framework */,
 				5D797279145388660059C957 /* Foundation.framework */,
 				5D79727B145388660059C957 /* CoreGraphics.framework */,
@@ -79,13 +203,14 @@
 		5D79727D145388660059C957 /* HowdIDraft */ = {
 			isa = PBXGroup;
 			children = (
+				5D797392147FD96D0059C957 /* Controller */,
+				5D797391147FD92D0059C957 /* Model */,
+				5D797390147FD9040059C957 /* View */,
+				5D79727E145388660059C957 /* Supporting Files */,
 				5D797286145388660059C957 /* HowdIDraftAppDelegate.h */,
 				5D797287145388660059C957 /* HowdIDraftAppDelegate.m */,
-				5D797289145388660059C957 /* MainWindow.xib */,
-				5D79728C145388660059C957 /* RootViewController.h */,
-				5D79728D145388660059C957 /* RootViewController.m */,
 				5D79728F145388660059C957 /* RootViewController.xib */,
-				5D79727E145388660059C957 /* Supporting Files */,
+				5D797344146779CF0059C957 /* ThirdPartyKeys.h */,
 			);
 			path = HowdIDraft;
 			sourceTree = "<group>";
@@ -99,6 +224,134 @@
 				5D797284145388660059C957 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D7972F1146776530059C957 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				5D7972F2146776530059C957 /* JSON.h */,
+				5D7972F3146776530059C957 /* NSObject+SBJSON.h */,
+				5D7972F4146776530059C957 /* NSObject+SBJSON.m */,
+				5D7972F5146776530059C957 /* NSString+SBJSON.h */,
+				5D7972F6146776530059C957 /* NSString+SBJSON.m */,
+				5D7972F7146776530059C957 /* SBJSON.h */,
+				5D7972F8146776530059C957 /* SBJSON.m */,
+			);
+			path = "json-framework";
+			sourceTree = "<group>";
+		};
+		5D7972F9146776530059C957 /* YOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				5D7972FA146776530059C957 /* Crypto */,
+				5D7972FD146776530059C957 /* NSData+OAuthResponse.h */,
+				5D7972FE146776530059C957 /* NSData+OAuthResponse.m */,
+				5D7972FF146776530059C957 /* NSDictionary+QueryString.h */,
+				5D797300146776530059C957 /* NSDictionary+QueryString.m */,
+				5D797301146776530059C957 /* NSString+URLEncoding.h */,
+				5D797302146776530059C957 /* NSString+URLEncoding.m */,
+				5D797303146776530059C957 /* YOAuth.h */,
+				5D797304146776530059C957 /* YOAuthConsumer.h */,
+				5D797305146776530059C957 /* YOAuthConsumer.m */,
+				5D797306146776530059C957 /* YOAuthRequest.h */,
+				5D797307146776530059C957 /* YOAuthRequest.m */,
+				5D797308146776530059C957 /* YOAuthSignatureMethod.h */,
+				5D797309146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.h */,
+				5D79730A146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.m */,
+				5D79730B146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.h */,
+				5D79730C146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.m */,
+				5D79730D146776530059C957 /* YOAuthToken.h */,
+				5D79730E146776530059C957 /* YOAuthToken.m */,
+				5D79730F146776530059C957 /* YOAuthUtil.h */,
+				5D797310146776530059C957 /* YOAuthUtil.m */,
+			);
+			path = YOAuth;
+			sourceTree = "<group>";
+		};
+		5D7972FA146776530059C957 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				5D7972FB146776530059C957 /* Base64Transcoder.c */,
+				5D7972FC146776530059C957 /* Base64Transcoder.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		5D797311146776530059C957 /* YOSSocial */ = {
+			isa = PBXGroup;
+			children = (
+				5D797312146776530059C957 /* YOSAccessToken.h */,
+				5D797313146776530059C957 /* YOSAccessToken.m */,
+				5D797314146776530059C957 /* YOSAuthRequest.h */,
+				5D797315146776530059C957 /* YOSAuthRequest.m */,
+				5D797316146776530059C957 /* YOSBaseRequest.h */,
+				5D797317146776530059C957 /* YOSBaseRequest.m */,
+				5D797318146776530059C957 /* YOSOpenSocialRequest.h */,
+				5D797319146776530059C957 /* YOSOpenSocialRequest.m */,
+				5D79731A146776530059C957 /* YOSRequestClient.h */,
+				5D79731B146776530059C957 /* YOSRequestClient.m */,
+				5D79731C146776530059C957 /* YOSRequestToken.h */,
+				5D79731D146776530059C957 /* YOSRequestToken.m */,
+				5D79731E146776530059C957 /* YOSResponseData.h */,
+				5D79731F146776530059C957 /* YOSResponseData.m */,
+				5D797320146776530059C957 /* YOSSession.h */,
+				5D797321146776530059C957 /* YOSSession.m */,
+				5D797322146776530059C957 /* YOSSocial.h */,
+				5D797323146776530059C957 /* YOSTokenStore.h */,
+				5D797324146776530059C957 /* YOSTokenStore.m */,
+				5D797325146776530059C957 /* YOSUser.h */,
+				5D797326146776530059C957 /* YOSUser.m */,
+				5D797327146776530059C957 /* YOSUserRequest.h */,
+				5D797328146776530059C957 /* YOSUserRequest.m */,
+				5D797329146776530059C957 /* YQLQueryRequest.h */,
+				5D79732A146776530059C957 /* YQLQueryRequest.m */,
+			);
+			path = YOSSocial;
+			sourceTree = "<group>";
+		};
+		5D797390147FD9040059C957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D797289145388660059C957 /* MainWindow.xib */,
+				5D797388147DC9F40059C957 /* TeamInfoTableViewController.xib */,
+				5D79738E147DE7FE0059C957 /* TeamInfoCell.xib */,
+				5D79738B147DE7CF0059C957 /* TeamInfoCell.h */,
+				5D79738C147DE7CF0059C957 /* TeamInfoCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5D797391147FD92D0059C957 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D7973B7148C68B50059C957 /* League.h */,
+				5D7973C0148C68B90059C957 /* Manager.h */,
+				5D7973C1148C68B90059C957 /* Manager.m */,
+				5D7973C3148C68B90059C957 /* YahooUser.h */,
+				5D7973C4148C68BA0059C957 /* YahooUser.m */,
+				5D7973BD148C68B80059C957 /* Team.h */,
+				5D7973BE148C68B80059C957 /* Team.m */,
+				5D7973BA148C68B70059C957 /* DraftEntry.h */,
+				5D7973BB148C68B70059C957 /* DraftEntry.m */,
+				5D7973B8148C68B60059C957 /* League.m */,
+				5D79737D147B37410059C957 /* YahooFFL.xcdatamodeld */,
+				5D797383147B43D50059C957 /* CoreDataManager.h */,
+				5D797384147B43D50059C957 /* CoreDataManager.m */,
+				5D79737A147B31090059C957 /* YahooCommunicationController.h */,
+				5D79737B147B31090059C957 /* YahooCommunicationController.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5D797392147FD96D0059C957 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5D79728C145388660059C957 /* RootViewController.h */,
+				5D79728D145388660059C957 /* RootViewController.m */,
+				5D797386147DC9F30059C957 /* TeamInfoTableViewController.h */,
+				5D797387147DC9F30059C957 /* TeamInfoTableViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +404,8 @@
 				5D797282145388660059C957 /* InfoPlist.strings in Resources */,
 				5D79728B145388660059C957 /* MainWindow.xib in Resources */,
 				5D797291145388660059C957 /* RootViewController.xib in Resources */,
+				5D79738A147DC9F40059C957 /* TeamInfoTableViewController.xib in Resources */,
+				5D79738F147DE7FE0059C957 /* TeamInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +419,41 @@
 				5D797285145388660059C957 /* main.m in Sources */,
 				5D797288145388660059C957 /* HowdIDraftAppDelegate.m in Sources */,
 				5D79728E145388660059C957 /* RootViewController.m in Sources */,
+				5D79732B146776530059C957 /* NSObject+SBJSON.m in Sources */,
+				5D79732C146776530059C957 /* NSString+SBJSON.m in Sources */,
+				5D79732D146776530059C957 /* SBJSON.m in Sources */,
+				5D79732E146776530059C957 /* Base64Transcoder.c in Sources */,
+				5D79732F146776530059C957 /* NSData+OAuthResponse.m in Sources */,
+				5D797330146776530059C957 /* NSDictionary+QueryString.m in Sources */,
+				5D797331146776530059C957 /* NSString+URLEncoding.m in Sources */,
+				5D797332146776530059C957 /* YOAuthConsumer.m in Sources */,
+				5D797333146776530059C957 /* YOAuthRequest.m in Sources */,
+				5D797334146776530059C957 /* YOAuthSignatureMethod_HMAC-SHA1.m in Sources */,
+				5D797335146776530059C957 /* YOAuthSignatureMethod_PLAINTEXT.m in Sources */,
+				5D797336146776530059C957 /* YOAuthToken.m in Sources */,
+				5D797337146776530059C957 /* YOAuthUtil.m in Sources */,
+				5D797338146776530059C957 /* YOSAccessToken.m in Sources */,
+				5D797339146776530059C957 /* YOSAuthRequest.m in Sources */,
+				5D79733A146776530059C957 /* YOSBaseRequest.m in Sources */,
+				5D79733B146776530059C957 /* YOSOpenSocialRequest.m in Sources */,
+				5D79733C146776530059C957 /* YOSRequestClient.m in Sources */,
+				5D79733D146776530059C957 /* YOSRequestToken.m in Sources */,
+				5D79733E146776530059C957 /* YOSResponseData.m in Sources */,
+				5D79733F146776530059C957 /* YOSSession.m in Sources */,
+				5D797340146776530059C957 /* YOSTokenStore.m in Sources */,
+				5D797341146776530059C957 /* YOSUser.m in Sources */,
+				5D797342146776530059C957 /* YOSUserRequest.m in Sources */,
+				5D797343146776530059C957 /* YQLQueryRequest.m in Sources */,
+				5D79737C147B31090059C957 /* YahooCommunicationController.m in Sources */,
+				5D79737F147B37410059C957 /* YahooFFL.xcdatamodeld in Sources */,
+				5D797385147B43D50059C957 /* CoreDataManager.m in Sources */,
+				5D797389147DC9F40059C957 /* TeamInfoTableViewController.m in Sources */,
+				5D79738D147DE7D00059C957 /* TeamInfoCell.m in Sources */,
+				5D7973B9148C68B70059C957 /* League.m in Sources */,
+				5D7973BC148C68B80059C957 /* DraftEntry.m in Sources */,
+				5D7973BF148C68B90059C957 /* Team.m in Sources */,
+				5D7973C2148C68B90059C957 /* Manager.m in Sources */,
+				5D7973C5148C68BE0059C957 /* YahooUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +499,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
@@ -223,6 +514,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -278,6 +570,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D79737D147B37410059C957 /* YahooFFL.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5D79737E147B37410059C957 /* LeagueModelCD.xcdatamodel */,
+			);
+			currentVersion = 5D79737E147B37410059C957 /* LeagueModelCD.xcdatamodel */;
+			name = YahooFFL.xcdatamodeld;
+			path = LeagueModelCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5D79726A145388650059C957 /* Project object */;
 }
