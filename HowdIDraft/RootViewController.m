@@ -10,6 +10,7 @@
 #import "TeamInfoTableViewController.h"
 #import "CoreDataManager.h"
 #import "League.h"
+#import "DraftEntry.h"
 
 @implementation RootViewController
 
@@ -41,11 +42,11 @@
     [yahooController requestTeamsForLeagues:[self leagueIDs]];    
 }
 
-- (NSArray *) leagueIDs
+- (NSMutableArray *) leagueIDs
 {
     if (!leagueIDs)
     {
-        NSArray *leagueDataSource = [[[CoreDataManager sharedInstance] getLeagues] retain];
+        NSMutableArray *leagueDataSource = [[[CoreDataManager sharedInstance] getLeagues] retain];
         leagueIDs = [[NSMutableArray alloc] initWithCapacity:[leagueDataSource count]];
         
         for (League *league in leagueDataSource)
@@ -58,14 +59,58 @@
 
 - (void) teamInfoLoaded
 {
-    [yahooController requestDraftInfoForLeagues:[self leagueIDs]]; 
-    
-    [self showTeams];
+    [yahooController requestSettingsForLeagues: [self leagueIDs]];
+}
+
+- (void) settingsLoaded
+{
+    //[yahooController requestDraftInfoForLeagues:[self leagueIDs]]; 
+    [self showTeams];    
 }
 
 - (void) draftInfoLoaded
 {
+    [self beginRequestingPlayerInfo];
+}
+
+- (void) beginRequestingPlayerInfo
+{
+    NSMutableArray *leagues = [[[CoreDataManager sharedInstance] getLeagues] retain];
     
+    League *league = [[leagues objectAtIndex:0] retain];
+    [self requestPlayerInfoForLeague: league];
+    
+    [leagues release];    
+}
+
+- (void) requestPlayerInfoForLeague: (League *) league
+{
+    NSMutableArray *playerIDs = [[NSMutableArray alloc] init];
+    
+    for (DraftEntry *draftEntry in league.draftResults)
+    {
+        [playerIDs addObject:draftEntry.player_key];
+    }
+    
+    [yahooController requestPlayerInfoForLeague:league.league_key andPlayerKeys:playerIDs];
+}
+
+- (void) playerInfoLoadedForLeagueKey: (NSString *) leagueKey;
+{
+    NSMutableArray *leagues = [[[CoreDataManager sharedInstance] getLeagues] retain];
+    
+    for (int i = 0; i < [leagues count]; i++)
+    {
+        League *currentLeague = [leagues objectAtIndex:i];
+        if ([leagueKey isEqualToString:currentLeague.league_key] && (i + i < [leagues count]))
+        {
+            [self requestPlayerInfoForLeague:[leagues objectAtIndex:i + 1]];
+            return;
+        }
+    }
+    
+    // Finished loading players
+    NSString *nextStep = @"profit";
 }
 
 - (void) showTeams

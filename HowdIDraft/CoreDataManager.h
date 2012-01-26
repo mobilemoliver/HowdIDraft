@@ -26,11 +26,13 @@
 // Methods for adding data
 - (void) addLeagueData: (NSArray *) leagues;
 - (void) addDraftData: (NSArray *) leagues;
+- (void) addSettingsDataForLeagues: (NSArray *) leagues;
 - (void) addTeamDataForLeagues: (NSArray *) leagues;
 - (void) processManager: (NSDictionary *) manager team: (Team *) newTeamObject inContext: (NSManagedObjectContext *) context;
+- (void) addPlayerData: (NSArray *) players forLeagueKey: (NSString *) leagueKey;
 
 // Methods for retrieving data
-- (NSArray *) getLeagues;
+- (NSMutableArray *) getLeagues;
 - (NSArray *) getTeams;
 - (League *) getLeagueForID: (NSString *) league_ID;
 - (Team *) getTeamForKey: (NSString *) team_key;

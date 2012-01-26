@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YahooCommunicationController.h"
+#import "League.h"
 
 @interface RootViewController : UIViewController <YahooCommDelegate> {
     YahooCommunicationController *yahooController;
@@ -15,9 +16,11 @@
     NSMutableArray *leagueIDs;
 }
 
-@property (nonatomic, readonly) NSArray *leagueIDs;
+@property (nonatomic, readonly) NSMutableArray *leagueIDs;
 
 - (void) showTeams;
+- (void) requestPlayerInfoForLeague: (League *) league;
+- (void) beginRequestingPlayerInfo;
 
 
 @end

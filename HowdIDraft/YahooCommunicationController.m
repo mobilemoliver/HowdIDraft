@@ -18,11 +18,19 @@
 #define YQL_GAMES [NSString stringWithFormat: @"select league_key, league_id, name from fantasysports.leagues where use_login=1 and game_key IN (%@)", YQL_GAME_IDS]
 #define YQL_DRAFT @"select league_id, draft_results from fantasysports.draftresults where league_key IN (%@)"
 #define YQL_TEAMS @"select league_id, standings.teams.team.team_key, standings.teams.team.team_id, standings.teams.team.name, standings.teams.team.team_points, standings.teams.team.team_standings, standings.teams.team.managers from fantasysports.leagues.standings where league_key IN (%@)"
+#define YQL_PLAYERS @"select player_key, player_id, editorial_team_full_name, name.first, name.last, eligible_positions.position, player_stats.coverage_type, player_stats.season, player_stats.stats from fantasysports.players.stats where league_key='%@' and player_key IN (%@)"
+#define YQL_LEAGUE_SETTINGS @"select league_key, league_id, name, draft_status, is_finished, settings.roster_positions, settings.stat_categories, settings.stat_modifiers from fantasysports.leagues.settings where league_key IN (%@)"
 
+#define MAX_LEAGUES_PER_TEAM_REQUEST 4
+#define MAX_LEAGUES_PER_DRAFT_REQUEST 999
+#define MAX_PLAYERS_PER_REQUEST 25
+#define MAX_LEAGUES_PER_SETTINGS_REQUEST 999
 
 @implementation YahooCommunicationController
 
 @synthesize delegate;
+@synthesize pendingRequestBucket;
+@synthesize requestingLeagueKey;
 
 - (UIWebView *) authenticate
 {
@@ -89,19 +97,113 @@
 
 - (void)requestDraftInfoForLeagues: (NSArray *) leagueIDs
 {
-    NSString *formattedLeagueIDs = [[self quotesAndCommas:leagueIDs] retain];
+    // Make a copy of the passed in leagueIDs so we don't remove from someone else's bucket
+    NSMutableArray *leagueBucket = [NSMutableArray arrayWithArray:leagueIDs];
+    NSMutableArray *currentRequestBucket = [NSMutableArray arrayWithCapacity:MAX_LEAGUES_PER_DRAFT_REQUEST];
+    
+    for (int i = 0; i < MAX_LEAGUES_PER_DRAFT_REQUEST; i++)
+    {
+        if ([leagueBucket count] > 0)
+        {
+            [currentRequestBucket addObject:[leagueBucket objectAtIndex:0]];
+            [leagueBucket removeObjectAtIndex:0];
+        }
+    }
+    
+    if ([leagueBucket count] > 0)
+        self.pendingRequestBucket = leagueBucket;
+    else
+        self.pendingRequestBucket = nil;
+    
+    NSString *formattedLeagueIDs = [[self quotesAndCommas:currentRequestBucket] retain];
     NSString *yql = [NSString stringWithFormat:YQL_DRAFT, formattedLeagueIDs];
     
     [self requestYahooDataWithYQL:yql andRequestType:YahooFantasyRequestTypeDraftInfo];
 }
 
-- (void) requestTeamsForLeagues: (NSArray *) leagueIDs
+- (void) requestSettingsForLeagues: (NSMutableArray *) leagueIDs
 {
-    NSString *formattedLeagueIDs = [[self quotesAndCommas:leagueIDs] retain];
+    // Make a copy of the passed in leagueIDs so we don't remove from someone else's bucket
+    NSMutableArray *leagueBucket = [NSMutableArray arrayWithArray:leagueIDs];
+    NSMutableArray *currentRequestBucket = [NSMutableArray arrayWithCapacity:MAX_LEAGUES_PER_SETTINGS_REQUEST];
+    
+    for (int i = 0; i < MAX_LEAGUES_PER_SETTINGS_REQUEST; i++)
+    {
+        if ([leagueBucket count] > 0)
+        {
+            [currentRequestBucket addObject:[leagueBucket objectAtIndex:0]];
+            [leagueBucket removeObjectAtIndex:0];
+        }
+    }
+    
+    if ([leagueBucket count] > 0)
+        self.pendingRequestBucket = leagueBucket;
+    else
+        self.pendingRequestBucket = nil;
+    
+    NSString *formattedLeagueIDs = [[self quotesAndCommas:currentRequestBucket] retain];
+    NSString *yql = [NSString stringWithFormat:YQL_LEAGUE_SETTINGS, formattedLeagueIDs];
+    
+    [self requestYahooDataWithYQL:yql andRequestType:YahooFantasyRequestTypeSettings];
+    
+}
+
+- (void) requestTeamsForLeagues: (NSMutableArray *) leagueIDs
+{
+    // Make a copy of the passed in leagueIDs so we don't remove from someone else's bucket
+    NSMutableArray *leagueBucket = [NSMutableArray arrayWithArray:leagueIDs];
+    NSMutableArray *currentRequestBucket = [NSMutableArray arrayWithCapacity:MAX_LEAGUES_PER_TEAM_REQUEST];
+    
+    for (int i = 0; i < MAX_LEAGUES_PER_TEAM_REQUEST; i++)
+    {
+        if ([leagueBucket count] > 0)
+        {
+            [currentRequestBucket addObject:[leagueBucket objectAtIndex:0]];
+            [leagueBucket removeObjectAtIndex:0];
+        }
+    }
+    
+    if ([leagueBucket count] > 0)
+        self.pendingRequestBucket = leagueBucket;
+    else
+        self.pendingRequestBucket = nil;
+    
+    NSString *formattedLeagueIDs = [[self quotesAndCommas:currentRequestBucket] retain];
     NSString *yql = [NSString stringWithFormat:YQL_TEAMS, formattedLeagueIDs];
     
     [self requestYahooDataWithYQL:yql andRequestType:YahooFantasyRequestTypeTeams];
     
+}
+
+- (void) requestPlayerInfoForLeague: (NSString *) league_key andPlayerKeys: (NSMutableArray *) player_keys
+{
+    NSAssert(league_key, @"Attempting to retrieve players for nil league_key");
+    
+    self.requestingLeagueKey = league_key;
+    
+    NSMutableArray *playerBucket = [NSMutableArray arrayWithArray:player_keys];
+    NSMutableArray *currentRequestBucket = [NSMutableArray arrayWithCapacity:MAX_PLAYERS_PER_REQUEST];
+    
+    for (int i = 0; i < MAX_PLAYERS_PER_REQUEST; i++)
+    {
+        if ([playerBucket count] > 0)
+        {
+            [currentRequestBucket addObject:[playerBucket objectAtIndex:0]];
+            [playerBucket removeObjectAtIndex:0];
+        }
+    }
+    
+    if ([playerBucket count] > 0)
+        self.pendingRequestBucket = playerBucket;
+    else
+        self.pendingRequestBucket = nil;
+    
+    NSString *formattedPlayerIDs = [[self quotesAndCommas:currentRequestBucket] retain];
+    NSString *yql = [NSString stringWithFormat:YQL_PLAYERS, league_key, formattedPlayerIDs];
+    
+    [self requestYahooDataWithYQL:yql andRequestType:YahooFantasyRequestTypePlayers];
+    
+    [formattedPlayerIDs release];
 }
 
 - (NSString *) quotesAndCommas: (NSArray *) stringArray
@@ -150,18 +252,50 @@
             
             break;
         }
-        case YahooFantasyRequestTypeDraftInfo:
-        {
-            NSArray *leagues = [results objectForKey:@"league"];
-            [[CoreDataManager sharedInstance] addDraftData: leagues];
-            [self.delegate draftInfoLoaded];
-            break;
-        }
         case YahooFantasyRequestTypeTeams:
         {
             NSArray *leagues = [results objectForKey: @"league"];
             [[CoreDataManager sharedInstance] addTeamDataForLeagues: leagues];
-            [self.delegate teamInfoLoaded];
+            
+            if (self.pendingRequestBucket)
+                [self requestTeamsForLeagues:self.pendingRequestBucket];
+            else
+                [self.delegate teamInfoLoaded];
+            break;
+        }
+        case YahooFantasyRequestTypeSettings:
+        {
+            NSArray *leagues = [results objectForKey:@"league"];
+            [[CoreDataManager sharedInstance] addSettingsDataForLeagues: leagues];
+
+            if (self.pendingRequestBucket)
+                [self requestTeamsForLeagues:self.pendingRequestBucket];
+            else
+                [self.delegate settingsLoaded];
+            break;
+        }
+        case YahooFantasyRequestTypeDraftInfo:
+        {
+            NSArray *leagues = [results objectForKey:@"league"];
+            [[CoreDataManager sharedInstance] addDraftData: leagues];
+            if (self.pendingRequestBucket)
+                [self requestDraftInfoForLeagues:pendingRequestBucket];
+            else
+                [self.delegate draftInfoLoaded];
+            break;
+        }
+        case YahooFantasyRequestTypePlayers:
+        {
+            //NSLog([results description]);
+            NSArray *players = [results objectForKey: @"player"];
+            [[CoreDataManager sharedInstance] addPlayerData:players forLeagueKey:self.requestingLeagueKey];
+
+            if (self.pendingRequestBucket)
+                [self requestPlayerInfoForLeague:self.requestingLeagueKey andPlayerKeys:self.pendingRequestBucket];
+            else
+            {
+                [self.delegate playerInfoLoadedForLeagueKey:self.requestingLeagueKey];
+            }
             break;
         }
     }

@@ -12,6 +12,10 @@
 #import "Manager.h"
 #import "YahooUser.h"
 #import "DraftEntry.h"
+#import "MGOPlayer.h"
+#import "MGOPlayerStat.h"
+#import "MGOPlayerPosition.h"
+#import "MGORosterPosition.h"
 
 #define PERSISTENT_STORE_FILE_NAME @"datastore.sqlite"
 
@@ -40,6 +44,24 @@ NSString * const pickKey = @"pick";
 NSString * const playerKeyKey = @"player_key";
 NSString * const roundKey = @"round";
 NSString * const nilString = @"<null>";
+NSString * const playerTeamKey = @"editorial_team_full_name";
+NSString * const eligiblePositionsKey = @"eligible_positions";
+NSString * const positionKey = @"position";
+NSString * const firstKey = @"first";
+NSString * const lastKey = @"last";
+NSString * const playerIDKey = @"player_id";
+NSString * const playerStatsKey = @"player_stats";
+NSString * const statsKey = @"stats";
+NSString * const statKey = @"stat";
+NSString * const statIDKey = @"stat_id";
+NSString * const valueKey = @"value";
+NSString * const draftStatusKey = @"draft_status";
+NSString * const isFinishedKey = @"is_finished";
+NSString * const settingsKey = @"settings";
+NSString * const rosterPositionsKey = @"roster_positions";
+NSString * const rosterPositionKey = @"roster_position";
+NSString * const positionTypeKey = @"position_type";
+NSString * const countKey = @"count";
 
 
 static CoreDataManager *sharedInstance = nil;
@@ -71,6 +93,42 @@ static CoreDataManager *sharedInstance = nil;
         return nil;
     
     return [NSNumber numberWithDouble:[valueInDict doubleValue]];
+}
+
+- (void) addSettingsDataForLeagues: (NSArray *) leagues
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    League *leagueObject;
+    MGORosterPosition *rosterPosition;
+    
+    for (NSDictionary *leagueDict in leagues)
+    {
+        NSString *leagueID = [leagueDict objectForKey: leagueIDKey];
+        leagueObject = [[self getLeagueForID:leagueID] retain];
+        
+        leagueObject.draft_status = [leagueDict objectForKey:draftStatusKey];
+        leagueObject.is_finished = [leagueDict objectForKey:isFinishedKey];
+        
+        NSDictionary *settingsDict = [leagueDict objectForKey:settingsKey];
+        
+        for (NSDictionary *rosterDict in [[settingsDict objectForKey: rosterPositionsKey] objectForKey: rosterPositionKey])
+        {
+            rosterPosition = [NSEntityDescription insertNewObjectForEntityForName:@"MGORosterPosition" inManagedObjectContext:context];
+            rosterPosition.league = leagueObject;
+            rosterPosition.league_id = leagueID;
+            rosterPosition.position = [rosterDict objectForKey:positionKey];
+            rosterPosition.position_type = [rosterDict objectForKey:positionTypeKey];
+            rosterPosition.count = [NSNumber numberWithInt:[[rosterDict objectForKey:countKey] intValue]];
+        }
+        
+        
+    }
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Error saving league settings: %@", [error localizedDescription]);
+    }
 }
 
 - (void) addDraftData: (NSArray *) leagues
@@ -185,6 +243,80 @@ static CoreDataManager *sharedInstance = nil;
 
 }
 
+- (void) addPlayerData: (NSArray *) players forLeagueKey: (NSString *) leagueKey
+{
+    NSAssert(leagueKey, @"Attempting to add player data for nil leagueKey");
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+    MGOPlayer *player = nil;
+    MGOPlayerStat *stat = nil;  
+    MGOPlayerPosition *position = nil;
+    for (NSDictionary *playerDict in players)
+    {
+        // First, get basic player information
+        player = [NSEntityDescription insertNewObjectForEntityForName: @"MGOPlayer" inManagedObjectContext: context];
+        player.editorial_team_full_name = [playerDict objectForKey: playerTeamKey];
+        player.first_name = [[playerDict objectForKey:nameKey] objectForKey:firstKey];
+        player.league_key = leagueKey;
+        
+        // If last name is null, IE for a Defense, exception gets thrown.  It's ok to leave last name null, but
+        // you can't set it to an object of type NSNull.
+        NSString *lastName = [[playerDict objectForKey:nameKey] objectForKey:lastKey];
+        if ([lastName isKindOfClass:[NSString class]])
+            player.last_name = lastName;
+        
+        player.player_id = [playerDict objectForKey:playerIDKey];
+        player.player_key = [playerDict objectForKey:playerKeyKey];
+        
+        // Second, work with eligible positions
+        NSDictionary *eligiblePositions = [playerDict objectForKey:eligiblePositionsKey];
+        NSArray *positions = [eligiblePositions objectForKey:positionKey];
+        NSDictionary *playerStatsDict = [playerDict objectForKey:playerStatsKey];
+        NSNumber *season = [NSNumber numberWithInt: [[playerStatsDict objectForKey:seasonKey] intValue]];
+        if ([positions isKindOfClass: [NSArray class]])
+        {
+            for (NSString *positionName in positions)
+            {
+                position = [NSEntityDescription insertNewObjectForEntityForName: @"MGOPlayerPosition" inManagedObjectContext: context];
+                position.player_key = player.player_key;
+                position.player = player;
+                position.position = positionName;
+                position.league_key = leagueKey;
+                position.season = season;
+            }
+        }
+        else if ([positions isKindOfClass: [NSString class]])
+        {
+            position = [NSEntityDescription insertNewObjectForEntityForName: @"MGOPlayerPosition" inManagedObjectContext: context];
+            position.player_key = player.player_key;
+            position.player = player;
+            position.position = (NSString *) positions;
+            position.league_key = leagueKey;
+            position.season = season;            
+        }
+        
+        // Third, get player stats
+        NSDictionary *statsDict = [playerStatsDict objectForKey:statsKey];
+        NSArray *stats = [statsDict objectForKey:statKey];
+        for (NSDictionary *statDict in stats)
+        {
+            stat = [NSEntityDescription insertNewObjectForEntityForName: @"MGOPlayerStat" inManagedObjectContext: context];
+            stat.season = season;
+            stat.player = player;
+            stat.player_key = player.player_key;
+            stat.stat_id = [statDict objectForKey:statIDKey];
+            stat.value = [NSNumber numberWithDouble: [[statDict objectForKey:valueKey] doubleValue]];
+            stat.league_key = leagueKey;
+        }
+    }
+    
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(@"Error saving league info: %@", [error localizedDescription]);
+    }
+}
+
 - (void) addLeagueData: (NSArray *) leagues
 {
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -253,7 +385,7 @@ static CoreDataManager *sharedInstance = nil;
     
 }
 
-- (NSArray *) getLeagues
+- (NSMutableArray *) getLeagues
 {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"League" inManagedObjectContext:managedObjectContext];   
     NSFetchRequest *request = [[NSFetchRequest alloc] init];   
@@ -265,7 +397,7 @@ static CoreDataManager *sharedInstance = nil;
     [sortDescriptor release];  
     
     NSArray *returnArray = [managedObjectContext executeFetchRequest:request error:nil];
-    return returnArray;
+    return [NSMutableArray arrayWithArray: returnArray];
 }
 
 - (Team *) getTeamForKey: (NSString *) team_key

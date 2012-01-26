@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1772F514CE49480019153C /* MGOLeagueStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1772F414CE49480019153C /* MGOLeagueStat.m */; };
+		5D1772F814CE4D200019153C /* MGORosterPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1772F714CE4D200019153C /* MGORosterPosition.m */; };
+		5D1772FB14CE4E840019153C /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1772FA14CE4E840019153C /* League.m */; };
+		5D1922B614B519CF00D2DE05 /* MGOPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1922B514B519CF00D2DE05 /* MGOPlayer.m */; };
+		5D1922BA14B519FB00D2DE05 /* MGOPlayerStat.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1922B914B519FB00D2DE05 /* MGOPlayerStat.m */; };
 		5D797278145388660059C957 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D797277145388660059C957 /* UIKit.framework */; };
 		5D79727A145388660059C957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D797279145388660059C957 /* Foundation.framework */; };
 		5D79727C145388660059C957 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D79727B145388660059C957 /* CoreGraphics.framework */; };
@@ -50,14 +55,24 @@
 		5D79738A147DC9F40059C957 /* TeamInfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D797388147DC9F40059C957 /* TeamInfoTableViewController.xib */; };
 		5D79738D147DE7D00059C957 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D79738C147DE7CF0059C957 /* TeamInfoCell.m */; };
 		5D79738F147DE7FE0059C957 /* TeamInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D79738E147DE7FE0059C957 /* TeamInfoCell.xib */; };
-		5D7973B9148C68B70059C957 /* League.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973B8148C68B60059C957 /* League.m */; };
 		5D7973BC148C68B80059C957 /* DraftEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973BB148C68B70059C957 /* DraftEntry.m */; };
 		5D7973BF148C68B90059C957 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973BE148C68B80059C957 /* Team.m */; };
 		5D7973C2148C68B90059C957 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973C1148C68B90059C957 /* Manager.m */; };
 		5D7973C5148C68BE0059C957 /* YahooUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973C4148C68BA0059C957 /* YahooUser.m */; };
+		5D7973D714A76E090059C957 /* MGOPlayerPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7973D614A76E080059C957 /* MGOPlayerPosition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D1772F314CE49480019153C /* MGOLeagueStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGOLeagueStat.h; sourceTree = "<group>"; };
+		5D1772F414CE49480019153C /* MGOLeagueStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGOLeagueStat.m; sourceTree = "<group>"; };
+		5D1772F614CE4D200019153C /* MGORosterPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGORosterPosition.h; sourceTree = "<group>"; };
+		5D1772F714CE4D200019153C /* MGORosterPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGORosterPosition.m; sourceTree = "<group>"; };
+		5D1772F914CE4E840019153C /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
+		5D1772FA14CE4E840019153C /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
+		5D1922B414B519CF00D2DE05 /* MGOPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGOPlayer.h; sourceTree = "<group>"; };
+		5D1922B514B519CF00D2DE05 /* MGOPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGOPlayer.m; sourceTree = "<group>"; };
+		5D1922B814B519FB00D2DE05 /* MGOPlayerStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGOPlayerStat.h; sourceTree = "<group>"; };
+		5D1922B914B519FB00D2DE05 /* MGOPlayerStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGOPlayerStat.m; sourceTree = "<group>"; };
 		5D797273145388650059C957 /* HowdIDraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowdIDraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D797277145388660059C957 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D797279145388660059C957 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,8 +155,6 @@
 		5D79738B147DE7CF0059C957 /* TeamInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoCell.h; sourceTree = "<group>"; };
 		5D79738C147DE7CF0059C957 /* TeamInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoCell.m; sourceTree = "<group>"; };
 		5D79738E147DE7FE0059C957 /* TeamInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamInfoCell.xib; sourceTree = "<group>"; };
-		5D7973B7148C68B50059C957 /* League.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = League.h; sourceTree = "<group>"; };
-		5D7973B8148C68B60059C957 /* League.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = League.m; sourceTree = "<group>"; };
 		5D7973BA148C68B70059C957 /* DraftEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraftEntry.h; sourceTree = "<group>"; };
 		5D7973BB148C68B70059C957 /* DraftEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraftEntry.m; sourceTree = "<group>"; };
 		5D7973BD148C68B80059C957 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
@@ -150,6 +163,8 @@
 		5D7973C1148C68B90059C957 /* Manager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
 		5D7973C3148C68B90059C957 /* YahooUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YahooUser.h; sourceTree = "<group>"; };
 		5D7973C4148C68BA0059C957 /* YahooUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YahooUser.m; sourceTree = "<group>"; };
+		5D7973D514A76E060059C957 /* MGOPlayerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGOPlayerPosition.h; sourceTree = "<group>"; };
+		5D7973D614A76E080059C957 /* MGOPlayerPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGOPlayerPosition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +339,8 @@
 		5D797391147FD92D0059C957 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5D7973B7148C68B50059C957 /* League.h */,
+				5D1772F314CE49480019153C /* MGOLeagueStat.h */,
+				5D1772F414CE49480019153C /* MGOLeagueStat.m */,
 				5D7973C0148C68B90059C957 /* Manager.h */,
 				5D7973C1148C68B90059C957 /* Manager.m */,
 				5D7973C3148C68B90059C957 /* YahooUser.h */,
@@ -333,8 +349,17 @@
 				5D7973BE148C68B80059C957 /* Team.m */,
 				5D7973BA148C68B70059C957 /* DraftEntry.h */,
 				5D7973BB148C68B70059C957 /* DraftEntry.m */,
-				5D7973B8148C68B60059C957 /* League.m */,
 				5D79737D147B37410059C957 /* YahooFFL.xcdatamodeld */,
+				5D1772F914CE4E840019153C /* League.h */,
+				5D1772FA14CE4E840019153C /* League.m */,
+				5D1772F614CE4D200019153C /* MGORosterPosition.h */,
+				5D1772F714CE4D200019153C /* MGORosterPosition.m */,
+				5D1922B814B519FB00D2DE05 /* MGOPlayerStat.h */,
+				5D1922B914B519FB00D2DE05 /* MGOPlayerStat.m */,
+				5D1922B414B519CF00D2DE05 /* MGOPlayer.h */,
+				5D1922B514B519CF00D2DE05 /* MGOPlayer.m */,
+				5D7973D514A76E060059C957 /* MGOPlayerPosition.h */,
+				5D7973D614A76E080059C957 /* MGOPlayerPosition.m */,
 				5D797383147B43D50059C957 /* CoreDataManager.h */,
 				5D797384147B43D50059C957 /* CoreDataManager.m */,
 				5D79737A147B31090059C957 /* YahooCommunicationController.h */,
@@ -449,11 +474,16 @@
 				5D797385147B43D50059C957 /* CoreDataManager.m in Sources */,
 				5D797389147DC9F40059C957 /* TeamInfoTableViewController.m in Sources */,
 				5D79738D147DE7D00059C957 /* TeamInfoCell.m in Sources */,
-				5D7973B9148C68B70059C957 /* League.m in Sources */,
 				5D7973BC148C68B80059C957 /* DraftEntry.m in Sources */,
 				5D7973BF148C68B90059C957 /* Team.m in Sources */,
 				5D7973C2148C68B90059C957 /* Manager.m in Sources */,
 				5D7973C5148C68BE0059C957 /* YahooUser.m in Sources */,
+				5D7973D714A76E090059C957 /* MGOPlayerPosition.m in Sources */,
+				5D1922B614B519CF00D2DE05 /* MGOPlayer.m in Sources */,
+				5D1922BA14B519FB00D2DE05 /* MGOPlayerStat.m in Sources */,
+				5D1772F514CE49480019153C /* MGOLeagueStat.m in Sources */,
+				5D1772F814CE4D200019153C /* MGORosterPosition.m in Sources */,
+				5D1772FB14CE4E840019153C /* League.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +572,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HowdIDraft/HowdIDraft-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = NS_BLOCK_ASSERTIONS;
 				INFOPLIST_FILE = "HowdIDraft/HowdIDraft-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -568,6 +599,7 @@
 				5D797296145388660059C957 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

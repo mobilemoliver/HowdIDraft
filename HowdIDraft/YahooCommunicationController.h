@@ -13,7 +13,9 @@
 typedef enum {
     YahooFantasyRequestTypeLeagues,
     YahooFantasyRequestTypeDraftInfo,
-    YahooFantasyRequestTypeTeams
+    YahooFantasyRequestTypeTeams,
+    YahooFantasyRequestTypePlayers,
+    YahooFantasyRequestTypeSettings
     
 } YahooFantasyRequestType;
 
@@ -23,6 +25,8 @@ typedef enum {
 - (void) leagueInfoLoaded;
 - (void) teamInfoLoaded;
 - (void) draftInfoLoaded;
+- (void) settingsLoaded;
+- (void) playerInfoLoadedForLeagueKey: (NSString *) leagueKey;
 
 @end
 
@@ -31,14 +35,26 @@ typedef enum {
     YOSSession *yahooSession;
     YahooFantasyRequestType requestType;
     id<YahooCommDelegate> delegate;
+    NSMutableArray *pendingRequestBucket;
+    NSString *requestingLeagueKey;
 }
 
 @property (nonatomic, assign) id<YahooCommDelegate> delegate;
 
+/* The Yahoo API can only handle so much data returned at once.  Therefore, we throttle most of the incoming
+ requests and only rquest so many things at once.  This array keeps track of any remaining things that need 
+ to be requested. */
+@property (nonatomic, retain) NSMutableArray *pendingRequestBucket;
+
+/* In the case that we are using the pendingRequestBucket, this is the league to be used for the requests.  */
+@property (nonatomic, retain) NSString *requestingLeagueKey;
+
 // Outwardly used methods
 - (void)requestLeagueInfo;
 - (void)requestDraftInfoForLeagues: (NSArray *) leagueIDs;
-- (void) requestTeamsForLeagues: (NSArray *) leagueIDs;
+- (void) requestTeamsForLeagues: (NSMutableArray *) leagueIDs;
+- (void) requestPlayerInfoForLeague: (NSString *) league_key andPlayerKeys: (NSMutableArray *) player_keys;
+- (void) requestSettingsForLeagues: (NSMutableArray *) leagueIDs;
 - (UIWebView *) authenticate;
 
 // Utility methods
